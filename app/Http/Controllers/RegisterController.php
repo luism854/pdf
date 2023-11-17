@@ -34,5 +34,18 @@ class RegisterController extends Controller
         $usuarios = User::all();
         return view('welcome', ['usuarios' => $usuarios]);
     }
+    public function destroy($id) {
+        $usuario = User::find($id);
+    
+        if (!$usuario) {
+            abort(404);
+        }
+        $usuario->delete();
+    
+        return view('welcome', ['usuarios' => $usuarios]);
+
+    }
+    
+
 
 }

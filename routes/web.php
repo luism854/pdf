@@ -24,6 +24,7 @@ Route::get('/', function () {
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/usuarios', [WelcomeController::class, 'index'])->name('usuarios');
+Route::delete('/usuarios/{id}/eliminar', [RegisterController::class, 'destroy'])->name('eliminar');
 
 Route::get('/usuarios/{id}/exportar-pdf', [ExportarController::class, 'exportarPDF'])->name('usuarios.exportar-pdf');
 
